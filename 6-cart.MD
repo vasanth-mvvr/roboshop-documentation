@@ -42,7 +42,7 @@ Setup a systemd service so that systemctl can manage the service
 vim /etc/systemd/system/cart.service
 ```
 ```
-[unit]
+[Unit]
 Description = Cart Service
 
 [Service]
@@ -50,8 +50,8 @@ User=roboshop
 Environment=MONGO=true
 Environment=REDIS_HOST=<ip-address>
 Environment=CATALOGUE_HOST=<Ip-address>
-Environment=CATALOGUE_PORT=808
-EXEC_START=/bin/node /app/server.js
+Environment=CATALOGUE_PORT=8080
+ExecStart=/bin/node /app/server.js
 SyslogIdentifier=cart
 
 [Install]

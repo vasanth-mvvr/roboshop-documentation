@@ -38,7 +38,8 @@ location /images/ {
     root /usr/share/nginx/html;
     try_files $uri /images/placeholder.jpg;
 }
-location /api/catalogue/ {proxy_pass http://:8080/;}
+location /api/catalogue/ {proxy_pass http:<ip-address>//:8080/;}
+location /api/user/ {proxy_pass http:<ip-address>//:8080/;}
 
 location /health {
     sub_status on;

@@ -42,7 +42,7 @@ Setup a systemd service so that systemctl can manage the service
 vim /etc/systemd/system/user.service
 ```
 ```
-[unit]
+[Unit]
 Description = User Service
 
 [Service]
@@ -50,7 +50,7 @@ User=roboshop
 Environment=MONGO=true
 Environment=REDIS_HOST=<ip-address>
 Environment=MONGO_URL="mogodb://<ip-address>:27017/users"
-EXEC_START=/bin/node /app/server.js
+ExecStart=/bin/node /app/server.js
 SyslogIdentifier=user
 
 [Install]
