@@ -19,19 +19,6 @@ Install nodejs
 ```
 dnf install nodejs -y
 ```
-Enable the service
-```
-systemctl enable nodejs
-```
-Start the service
-```
-systemctl start nodejs
-```
-check the status
-```
-systemctl status nodejs
-```
-
 Config the application manually as it is developed by the developer of the company.
 
 Add application user
@@ -73,7 +60,7 @@ Description = Catalogue Service
 [Service]
 User=roboshop
 Environment=MONGO=true
-Environment=MONGO_URL="mongodb://catalogue.vasanthreddy.space/catalogue"
+Environment=MONGO_URL="mongodb://<mongo-ip>:27017/catalogue"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=catalogue
 
